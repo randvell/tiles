@@ -4,6 +4,7 @@ import Layout from '../Layout';
 import Logo from './Logo';
 import Auth from './Auth';
 import PropTypes from 'prop-types';
+import Divider from '../../UI/Divider';
 
 export const Header = () => (
   <header className={style.header}>
@@ -13,6 +14,7 @@ export const Header = () => (
         <Auth />
       </div>
     </Layout>
+    <Divider />
   </header>
 );
 

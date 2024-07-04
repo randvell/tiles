@@ -1,0 +1,12 @@
+.tile {
+  display: block;
+  flex-basis: 250px;
+  border-radius: 16px;
+  border: solid 1px var(--grayF5);
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}

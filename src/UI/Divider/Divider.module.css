@@ -1,0 +1,6 @@
+.block {
+  display: block;
+  height: 1px;
+  background-color: aliceblue;
+  margin: 10px 0;
+}

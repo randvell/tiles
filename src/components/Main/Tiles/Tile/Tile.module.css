@@ -1,6 +1,7 @@
 .tile {
   display: block;
-  flex-basis: 250px;
+  flex: 1 1 250px;
+  max-width: 300px;
   border-radius: 16px;
   border: solid 1px var(--grayF5);
   overflow: hidden;
@@ -8,5 +9,6 @@
 
 .img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
 }

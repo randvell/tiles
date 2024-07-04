@@ -1,16 +1,13 @@
-.header {
-  padding: 15px 0;
-}
-
 .gridContainer {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
   gap: 15px;
+  padding: 15px 0;
 }
 
 @media (min-width: 768px) {
-  .header {
+  .gridContainer {
     padding: 30px;
   }
 }

@@ -13,6 +13,7 @@ import formatDate from '../../../../utils/formatDate';
 export const PhotoModal = () => {
   const navigate = useNavigate();
   const {id} = useParams();
+  console.log(id);
 
   const closeModal = () => {
     navigate(`/`);
@@ -43,9 +44,6 @@ export const PhotoModal = () => {
 
   const photosState = useSelector((state) => state.photos);
   const photoData = photosState.list.find((photo) => photo.id === id) || {};
-  if (!photoData || !photoData.length) {
-    return navigate('/');
-  }
 
   const user = photoData.user;
   const src = photoData.urls.regular;

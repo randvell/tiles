@@ -2,6 +2,7 @@
 /* eslint-disable max-len */
 import {createSlice} from '@reduxjs/toolkit';
 import {changeLike, fetchPhotos} from './action';
+import {mergeArraysUnique} from '../../utils/mergeArrayUnique';
 
 // const list = [
 //   {
@@ -917,7 +918,7 @@ const photosSlice = createSlice({
       })
       .addCase(fetchPhotos.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.list = [...state.list, ...action.payload];
+        state.list = mergeArraysUnique(state.list, action.payload, 'id');
         state.page += 1;
       })
       .addCase(fetchPhotos.rejected, (state, action) => {

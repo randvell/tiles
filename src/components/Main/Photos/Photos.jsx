@@ -15,7 +15,9 @@ export const Photos = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchPhotos());
+    if (!photosState.list.length) {
+      dispatch(fetchPhotos());
+    }
   }, [dispatch, token]);
 
   const endList = useRef(null);

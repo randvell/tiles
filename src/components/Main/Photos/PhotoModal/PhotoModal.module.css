@@ -13,7 +13,7 @@
   padding: 20px;
   border-radius: 16px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: max-content 1fr;
   justify-items: center;
   gap: 20px;
   height: 90%;

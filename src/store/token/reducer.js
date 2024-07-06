@@ -8,7 +8,12 @@ const tokenSlice = createSlice({
     status: 'idle',
     error: null,
   },
-  reducers: {},
+  reducers: {
+    resetToken: (state) => {
+      localStorage.removeItem('access_token');
+      state.token = '';
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAccessToken.pending, (state) => {
@@ -24,5 +29,7 @@ const tokenSlice = createSlice({
       });
   },
 });
+
+export const {resetToken} = tokenSlice.actions;
 
 export default tokenSlice.reducer;

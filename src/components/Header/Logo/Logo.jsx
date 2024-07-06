@@ -1,8 +1,8 @@
-// import style from './Logo.module.css';
+import style from './Logo.module.css';
 
 export const Logo = () => {
   console.log();
   return (
-    <div>Лого</div>
+    <span className={style.logo}>Лого</span>
   );
 };

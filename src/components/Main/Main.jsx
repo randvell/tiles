@@ -3,7 +3,8 @@ import {Route, Routes} from 'react-router-dom';
 import Layout from '../Layout';
 import Page404 from '../Pages/Page404';
 import PageAuth from '../Pages/PageAuth';
-import Tiles from './Tiles';
+import Photos from './Photos';
+import PhotoModal from './Photos/PhotoModal';
 
 export const Main = () => (
   <main className={style.main}>
@@ -13,11 +14,11 @@ export const Main = () => (
           path="/"
           element={
             <>
-              <Tiles />
+              <Photos />
             </>
           }
         />
-        <Route path="/tile/:id" element={<></>} />
+        <Route path="/photos/:id" element={<PhotoModal />} />
         <Route path="/auth" element={<PageAuth />} />
         <Route path="*" element={<Page404 />} />
       </Routes>

@@ -8,7 +8,7 @@ export const fetchAccessToken = createAsyncThunk(
     const state = getState();
     const code = state.secret.value;
     if (!code) {
-      rejectWithValue('Client code not found');
+      return rejectWithValue('Client code not found');
     }
 
     const requestData = prepareTokenRequest();

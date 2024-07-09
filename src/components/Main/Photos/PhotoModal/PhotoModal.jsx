@@ -13,7 +13,6 @@ import formatDate from '../../../../utils/formatDate';
 export const PhotoModal = () => {
   const navigate = useNavigate();
   const {id} = useParams();
-  console.log(id);
 
   const closeModal = () => {
     navigate(`/`);

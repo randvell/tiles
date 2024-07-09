@@ -2,11 +2,8 @@
 
 import Text from '../../../UI/Text';
 
-export const Page404 = () => {
-  console.log();
-  return (
-    <div>
-      <Text As="h2">404</Text>{' '}
-    </div>
-  );
-};
+export const Page404 = () => (
+  <div>
+    <Text As="h2">404</Text>{' '}
+  </div>
+);

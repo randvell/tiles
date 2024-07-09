@@ -2,15 +2,13 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 import {API_URL} from '../../api/const';
 import {handleResponseError} from '../../api/response';
+import {clientId} from '../../api/auth';
 
 export const fetchPhotos = createAsyncThunk(
   'photos/fetch',
   async (_, {getState, rejectWithValue, dispatch}) => {
     const state = getState();
     const token = state.token.value;
-    if (!token) {
-      return rejectWithValue('Token not found');
-    }
 
     const currentPage = state.photos.page;
 
@@ -19,14 +17,13 @@ export const fetchPhotos = createAsyncThunk(
         `${API_URL}/photos?per_page=30&page=${currentPage + 1}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: token ? `Bearer ${token}}` : `Client-ID ${clientId}`,
           },
         }
       );
 
       return response.data;
     } catch (e) {
-      console.log(e);
       const errorData = handleResponseError(e, dispatch);
       return rejectWithValue(errorData || {error: {message: e.toString()}});
     }

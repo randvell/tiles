@@ -1,16 +1,26 @@
 .auth {
   height: 30px;
-  display: flex;
+  display: grid;
+  grid-template-areas:
+    'username avatar'
+    'logout logout';
   align-items: flex-end;
+  gap: 5px;
 }
 
 .username {
+  grid-area: username;
   display: inline-block;
   vertical-align: bottom;
 }
 
 .profileImg {
+  grid-area: avatar;
   display: block;
   width: 30px;
   height: 30px;
+}
+
+.logout {
+  grid-area: logout;
 }

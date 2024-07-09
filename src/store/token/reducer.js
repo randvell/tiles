@@ -11,7 +11,7 @@ const tokenSlice = createSlice({
   reducers: {
     resetToken: (state) => {
       localStorage.removeItem('access_token');
-      state.token = '';
+      state.value = '';
     },
   },
   extraReducers: (builder) => {
